@@ -1,19 +1,24 @@
 <p>Insert Event Form</p>
 <h1>Fill Out This Form</h1>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-<link rel="stylesheet" href="/resources/demos/style.css">
-<script>
-$(function() {
-$( "#datepicker" ).datepicker();
-});
-</script>
+	<meta charset="utf-8">
+	<title>jQuery UI Datepicker - Default functionality</title>
+	<link rel="stylesheet" href="../../themes/base/jquery.ui.all.css">
+	<script src="../../jquery-1.10.2.js"></script>
+	<script src="../../ui/jquery.ui.core.js"></script>
+	<script src="../../ui/jquery.ui.widget.js"></script>
+	<script src="../../ui/jquery.ui.datepicker.js"></script>
+	<link rel="stylesheet" href="../demos.css">
+	<script>
+	$(function() {
+		$( "#datepicker" ).datepicker();
+	});
+	</script>
 </head>
-<form action="/calendar" method="POST">Reminder Date: <input type="text" id="datepicker"></form>p>
- />Time:<select name="time1">
+<form action="/calendar" method="POST">
+Reminder Date: <input type="text" id="datepicker"></form>
+ Time:<select name="time1">
  <option value="00">00</option>
  <option value="01">01</option>
  <option value="02">02</option>
