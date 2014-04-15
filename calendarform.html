@@ -9,12 +9,13 @@
 
 <script>
 $(function() {
-    $( "#datepicker" ).datepicker();
+    $( "#datepicker1" ).datepicker();
+    $( "#datepicker2" ).datepicker();
 });
 </script>
 </head>
 <form name= "calendarform" action="calendar.php" method="POST">
-Event start: <input type="text" id="datepicker" name='StartDate'>
+Event start: <input type="text" id="datepicker1" name='StartDate'>
  <select name="time1">
  <option value="00">00</option>
  <option value="01">01</option>
@@ -46,7 +47,7 @@ Event start: <input type="text" id="datepicker" name='StartDate'>
  <option value="quarter">15</option>
  <option value="half">30</option>
  <option value="threequarter">45</option></select>
-<p><br> Event finish: <input type="text" id="datepicker" name='FinishDate'>
+<p><br> Event finish: <input type="text" id="datepicker2" name='FinishDate'>
  <select name="time">
  <option value="00">00</option>
  <option value="01">01</option>
