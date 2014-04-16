@@ -50,17 +50,21 @@ if(isset($_POST['action']))
 	$recurrence = $_POST["recurrence"];
 
 
+	$dateS = DateTime::createFromFormat("d/m/Y", $_GET['StartDate']);
+	$dateF = DateTime::createFromFormat("d/m/Y", $_GET['FinishDate']);
+
+
 
 	$event = new Google_Event(); 
 	$event->setSummary($title);
 	$event->setDescription($desc);
 	$event->setLocation($locat);
 	$start = new Google_EventDateTime(); 
-	$start->setDateTime($from);
+	$start->setDateTime($dateS->format("Y-m-d"));
 	$start->setTimeZone('Europe/London')
 	$event->setStart($start);
 	$end = new Google_EventDateTime(); 
-	$end->setDateTime($until);
+	$end->setDateTime($dateF->format("Y-m-d"));
 	$end->setTimeZone('Europe/London')
 	$event->setEnd($end);
 	$event-> setRecurrence(array('RRULE:FREQ=$frequency;UNTIL=$EndRec'))

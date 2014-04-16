@@ -11,6 +11,10 @@
 $(function() {
     $( "#datepicker1" ).datepicker();
     $( "#datepicker2" ).datepicker();
+    var date = $('#datepicker').datepicker({ dateFormat: 'dd-mm-yy' }).val();
+
+    //var dateTypeVar = $('#datepicker').datepicker('getDate');
+	//$.datepicker.formatDate('dd-mm-yy', dateTypeVar);
 });
 </script>
 </head>
