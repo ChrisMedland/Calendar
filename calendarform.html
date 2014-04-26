@@ -12,7 +12,7 @@ $(function() {
     $( "#datepicker1" ).datepicker();
     $( "#datepicker2" ).datepicker();
     var date = $('#datepicker').datepicker({ dateFormat: 'dd-mm-yy' }).val();
-
+    var date = $('#datepicker').datepicker('getDate');
     //var dateTypeVar = $('#datepicker').datepicker('getDate');
 	//$.datepicker.formatDate('dd-mm-yy', dateTypeVar);
 });
@@ -85,10 +85,12 @@ Event start: <input type="text" id="datepicker1" name='StartDate'>
  <option value="threequarter">45</option></select>
 
 
-<p><br /> Message: <input type="text" name="Title" size="60" /></p>
+<p><br /> Event Title: <input type="text" name="Title" size="60" /></p>
 <p><br /> Repeat: <input type="checkbox" name="repeat" value="same time every" />Same time every <input type="text" name="days" size="3" /> Day(s)<br /> <input type="checkbox" name="repeat" value="same time every" />Same day every <input type="text" name="weeks" size="3" /> week(s)<br /> <input type="checkbox" name="repeat" value="same time every" />Same day every <input type="text" name="months" size="3" /> month(s)<br /> <input type="checkbox" name="year" value="year" /> Same date every year</p>
-<p><br /> Add a sound file?</p>
-<p><br /> Select from files already stored<input type="file" name="DriveFile" size="40" /> <br /> Select file from computer<input type="file" name="DriveFile" size="40" /></p>
+
+<p><br /> Image Url?: <input type="text" name="url" size="60" /></p>
+<!--<p><br /> Add a Drive file?</p>
+<p><br /> Select from files already stored<input type="file" name="DriveFile" size="40" /> <br /> Select file from computer<input type="file" name="DriveFile" size="40" /></p> -->
 <p><br /> <input type="submit" value="Submit" /></p>
 </form>
 <p><br /> Now is:</p>

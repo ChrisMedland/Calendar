@@ -48,6 +48,12 @@ if(isset($_POST['action']))
 	$from = $_POST["from"];
 	$until = $_POST["until"];
 	$recurrence = $_POST["recurrence"];
+	$days = $_POST["days"];
+	$Weeks = $_POST["weeks"];
+	$months = $_POST["months"];
+	$EndRec = $_POST["EndRec"];
+	$frequency = Recurrence:: ("frequency" $_GET['days, weeks, months']);
+	$gadgeturl = ("url");
 
 
 	$dateS = DateTime::createFromFormat("d/m/Y", $_GET['StartDate']);
@@ -61,14 +67,17 @@ if(isset($_POST['action']))
 	$event->setLocation($locat);
 	$start = new Google_EventDateTime(); 
 	$start->setDateTime($dateS->format("Y-m-d"));
-	$start->setTimeZone('Europe/London')
+	$start->setTimeZone('Europe/London');
 	$event->setStart($start);
 	$end = new Google_EventDateTime(); 
 	$end->setDateTime($dateF->format("Y-m-d"));
-	$end->setTimeZone('Europe/London')
+	$end->setTimeZone('Europe/London');
 	$event->setEnd($end);
-	$event-> setRecurrence(array('RRULE:FREQ=$frequency;UNTIL=$EndRec'))
-
+	$event-> setRecurrence(array('RRULE:FREQ=$frequency;UNTIL=$EndRec'));
+	else
+	$cal->events->insert('primary', $event);
+	$image->setGadget($gadgeturl);
+	//$image-> sethtmlLink($htmlurl);
 
 	$attendee1 = new Google_EventAttendee(); 
 	$attendee1->setEmail('christophermedland@googlemail.com'); 
@@ -78,6 +87,36 @@ if(isset($_POST['action']))
 
 	echo $recurringEvent->getId(); 
 }
+
+//function insertFile($service, $title, $description, $parentId, $mimeType, $filename) {
+ // $file = new Google_DriveFile();
+  //$file->setTitle($title);
+  //$file->setDescription($description);
+  //$file->setMimeType($mimeType);
+  
+
+//	 if ($parentId != null) {
+//    $parent = new ParentReference();
+//    $parent->setId($parentId);
+//    $file->setParents(array($parent));
+//  }
+
+//  try {
+//    $data = file_get_contents($filename);
+
+//    $createdFile = $service->files->insert($file, array(
+//      'data' => $data,
+//      'mimeType' => $mimeType,
+//    ));
+
+    // Uncomment the following line to print the File ID
+    // print 'File ID: %s' % $createdFile->getId();
+
+//    return $createdFile;
+//  } catch (Exception $e) {
+//    print "An error occurred: " . $e->getMessage();
+//  }
+//}
 }
 
 
