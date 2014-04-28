@@ -73,9 +73,9 @@ if(isset($_POST['action']))
 	$end->setDateTime($dateF->format("Y-m-d"));
 	$end->setTimeZone('Europe/London');
 	$event->setEnd($end);
-	$event-> setRecurrence(array('RRULE:FREQ=$frequency;UNTIL=$EndRec'));
+	//$event-> setRecurrence(array('RRULE:FREQ=$frequency;UNTIL=$EndRec'));
 	//else
-	//$cal->events->insert('primary', $event);
+	$cal->events->insert('primary', $event);
 	//$image->setGadget($gadgeturl);
 	//$image-> sethtmlLink($htmlurl);
 
