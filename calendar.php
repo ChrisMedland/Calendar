@@ -52,8 +52,8 @@ if(isset($_POST['action']))
 	$Weeks = $_POST["weeks"];
 	$months = $_POST["months"];
 	$EndRec = $_POST["EndRec"];
-	$frequency = Recurrence:: ("frequency" $_GET['days, weeks, months']);
-	$gadgeturl = ("url");
+	//$frequency = Recurrence:: ["frequency" $_GET['days, weeks, months'];
+	//$gadgeturl = ["url"];
 
 
 	$dateS = DateTime::createFromFormat("d/m/Y", $_GET['StartDate']);
@@ -74,9 +74,9 @@ if(isset($_POST['action']))
 	$end->setTimeZone('Europe/London');
 	$event->setEnd($end);
 	$event-> setRecurrence(array('RRULE:FREQ=$frequency;UNTIL=$EndRec'));
-	else
-	$cal->events->insert('primary', $event);
-	$image->setGadget($gadgeturl);
+	//else
+	//$cal->events->insert('primary', $event);
+	//$image->setGadget($gadgeturl);
 	//$image-> sethtmlLink($htmlurl);
 
 	$attendee1 = new Google_EventAttendee(); 
